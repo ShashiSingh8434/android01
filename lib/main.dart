@@ -1,4 +1,4 @@
-import 'package:android01/feature/counter/pages/counter_page.dart';
+import 'package:android01/feature/counter/views/counter_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
