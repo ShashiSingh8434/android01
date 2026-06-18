@@ -1,8 +1,9 @@
 import 'package:android01/feature/counter/pages/counter_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,13 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Dashboard(),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Dashboard());
   }
 }
 
@@ -32,10 +27,10 @@ class Dashboard extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const CounterPage()),
+              MaterialPageRoute(builder: (context) => CounterPage()),
             );
           },
-          child: Text("Counter"),
+          child: Text("Go to Counter Page"),
         ),
       ),
     );
